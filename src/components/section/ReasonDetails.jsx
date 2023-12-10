@@ -1,8 +1,24 @@
 import QuestionImage from "../../assets/img/QuestionImage.png";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Reason = () => {
+  window.scrollTo(0, 0);
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  }, []);
+
   return (
     <div className=" flex bg-white min-h-fit py-32 text-black items-center justify-center">
-      <div className="flex max-w-7xl lg:gap-32 gap-10 lg:flex-row flex-col justify-center items-center lg:w-full xl:p-0 p-5">
+      <div
+        className="flex max-w-7xl lg:gap-32 gap-10 lg:flex-row flex-col justify-center items-center lg:w-full xl:p-0 p-5"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+      >
         <div>
           <h1 className="xl:text-5xl md:text-4xl text-2xl font-bold">
             Kenapa Menggunakan Website ini?

@@ -1,7 +1,20 @@
 import React from "react";
 import HeroBackground from "../../assets/img/HeroBackground.png";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Hero = () => {
+
+  window.scrollTo(0, 0);
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  }, []);
+  
+
   return (
     <div>
       <div
@@ -12,7 +25,7 @@ const Hero = () => {
       >
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-fit text-white">
+          <div className="max-w-fit text-white" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
             <h1 className="mb-5 lg:text-8xl md:text-7xl sm:text-5xl text-4xl font-bold">
               Selamat Datang
             </h1>

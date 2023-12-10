@@ -2,8 +2,18 @@ import CardLatestNews from "../elements/CardLatestNews";
 import Img1 from "../../assets/img/minimarket.jpeg";
 import Img2 from "../../assets/img/korpusi.jpg";
 import Img3 from "../../assets/img/begal.jpeg";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const LatestNews = () => {
+  window.scrollTo(0, 0);
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  }, []);
   return (
     <div className="flex flex-col gap-5 px-4 xl:w-[1280px] w-fit justify-center">
       <h1

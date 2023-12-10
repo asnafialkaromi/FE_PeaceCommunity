@@ -4,6 +4,7 @@ import LatestNews from "../components/section/LatestNews";
 import OtherNews from "../components/section/OtherNews";
 
 const BeritaPage = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <NavbarUser />

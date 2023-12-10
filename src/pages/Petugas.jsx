@@ -5,8 +5,18 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Petugas = () => {
+  window.scrollTo(0, 0);
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  }, []);
+
   const [users, setUsers] = useState([]);
   const { isLogin } = useSelector((state) => state.auth);
   const navigate = useNavigate();
@@ -52,7 +62,11 @@ const Petugas = () => {
       <div className="drawer-content flex flex-col bg-base-200 items-center ">
         {/* Page content here */}
         <NavBarAdmin>Petugas</NavBarAdmin>
-        <div className="w-full h-fit p-6">
+        <div
+          className="w-full h-fit p-6"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <div className="overflow-x-auto rounded-xl w-full">
             <table className="table table-auto">
               {/* head */}

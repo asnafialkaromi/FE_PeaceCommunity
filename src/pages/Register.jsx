@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ImageLogin from "../assets/img/ImageLogin.png";
 import InputText from "../components/elements/InputText";
 import Button from "../components/elements/Button";
 import axios from "axios";
 import Swal from "sweetalert2";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const RegisterPage = () => {
   const [name, setName] = useState("");
@@ -61,6 +63,13 @@ const RegisterPage = () => {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  }, []);
+
   return (
     <>
       <div className="flex flex-row ">
@@ -68,10 +77,16 @@ const RegisterPage = () => {
           <img src={ImageLogin} alt="" className="h-full w-full object-cover" />
         </div>
         <div className="bg-gradient-to-b from-[#003F9A] to-[#2871CC] lg:w-1/2 h-screen w-full flex flex-col items-center justify-center gap-8 py-14">
-          <h1 className="text-4xl font-bold text-white text-center">
+          <h1
+            className="text-4xl font-bold text-white text-center"
+            data-aos="fade-down"
+            data-aos-duration="2000"
+          >
             Layanan Online <br /> Website Pengaduan Masyarakat
           </h1>
           <form
+            data-aos="fade-up"
+            data-aos-duration="2000"
             onSubmit={handleRegister}
             className="flex flex-col items-center justify-center gap-6 w-[80%] lg:w-full"
           >

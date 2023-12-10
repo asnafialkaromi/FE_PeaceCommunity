@@ -6,8 +6,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import Footer from "../components/elements/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Laporan = () => {
+  window.scrollTo(0, 0);
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  }, []);
+
   const { isLogin } = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
@@ -52,7 +62,11 @@ const Laporan = () => {
             </Button>
           </Link>
         </div>
-        <div className="flex flex-col gap-5 px-4 w-full max-w-7xl h-fit items-center justify-center">
+        <div
+          className="flex flex-col gap-5 px-4 w-full max-w-7xl h-fit items-center justify-center"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           {reports.map((report) => (
             <CardLaporan
               key={report.id}

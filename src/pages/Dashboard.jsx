@@ -11,8 +11,12 @@ import PetugasIcon from "../assets/icons/Petugas.svg";
 import PengaduanIcon from "../assets/icons/PengaduanIcon.svg";
 import PengaduanAcc from "../assets/icons/PengaduanIcon-Acc.svg";
 import PengaduanTertunda from "../assets/icons/PengaduanIcon-Pending.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Dashboard = () => {
+  window.scrollTo(0, 0);
+
   const [name, setName] = useState("");
   const [countPetugas, setCountPetugas] = useState(0);
   const [countPengaduan, setCountPengaduan] = useState(0);
@@ -90,6 +94,12 @@ const Dashboard = () => {
     }
   }, [isLogin, navigate]);
 
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  }, []);
+
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -97,7 +107,11 @@ const Dashboard = () => {
         {/* Page content here */}
         <NavBarAdmin>Dashboard {name}</NavBarAdmin>
         <div className="w-full h-full p-6 flex flex-col gap-6">
-          <div className="grid xl:grid-rows-1 xl:grid-cols-4 sm:grid-rows-2 sm:grid-cols-2 xl:w-full sm:w-[600px] gap-4">
+          <div
+            className="grid xl:grid-rows-1 xl:grid-cols-4 sm:grid-rows-2 sm:grid-cols-2 xl:w-full sm:w-[600px] gap-4"
+            data-aos="fade-down"
+            data-aos-duration="2000"
+          >
             <DataShow
               icon={PetugasIcon}
               title="Petugas"
@@ -119,7 +133,11 @@ const Dashboard = () => {
               jumlah={countPengaduanTertunda}
             />
           </div>
-          <div className="bg-white flex flex-col w-full h-fit p-6 rounded-xl gap-4">
+          <div
+            className="bg-white flex flex-col w-full h-fit p-6 rounded-xl gap-4"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             <h2 className="text-3xl font-bold">Pengaduan Terbaru</h2>
             <div className="flex flex-col w-full h-fit gap-4 place-items-center">
               {reports.map((report) => (

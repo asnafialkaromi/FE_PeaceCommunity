@@ -5,6 +5,9 @@ import FeatureDetails from "../components/section/FeatureDetails";
 import Footer from "../components/elements/Footer";
 
 const HomePage = () => {
+
+  window.scrollTo(0, 0);
+  
   return (
     <>
       <NavBarUser />
