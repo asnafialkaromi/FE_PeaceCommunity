@@ -85,8 +85,8 @@ const Petugas = () => {
                   <tr className="bg-white" key={user.uuid}>
                     <td>{index + 1}</td>
                     <td>{user.name}</td>
-                    <td>{user.email}</td>
                     <td>{user.noTelp}</td>
+                    <td>{user.role}</td>
                     <td>
                       <button
                         className="btn btn-ghost btn-xs text-red-600 p-0"

@@ -17,13 +17,13 @@ import "aos/dist/aos.css";
 const Dashboard = () => {
   window.scrollTo(0, 0);
 
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
   const [countPetugas, setCountPetugas] = useState(0);
   const [countPengaduan, setCountPengaduan] = useState(0);
   const [countPengaduanAcc, setCountPengaduanAcc] = useState(0);
   const [countPengaduanTertunda, setCountPengaduanTertunda] = useState(0);
   const [reports, setReports] = useState([]);
-  const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
   const { isLogin } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -54,12 +54,11 @@ const Dashboard = () => {
 
   useEffect(() => {
     getMe();
-  }, []);
+  });
 
   const getMe = async () => {
     try {
       const response = await axios.get("http://localhost:5000/api/v1/me");
-      setMessage(response.data);
       dispatch(setFulfilled(response.data));
     } catch (error) {
       console.log(error);
@@ -105,7 +104,7 @@ const Dashboard = () => {
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center bg-slate-200">
         {/* Page content here */}
-        <NavBarAdmin>Dashboard {name}</NavBarAdmin>
+        <NavBarAdmin>Dashboard </NavBarAdmin>
         <div className="w-full h-full p-6 flex flex-col gap-6">
           <div
             className="grid xl:grid-rows-1 xl:grid-cols-4 sm:grid-rows-2 sm:grid-cols-2 xl:w-full sm:w-[600px] gap-4"

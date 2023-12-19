@@ -68,7 +68,8 @@ const Pengaduan = () => {
         <div
           role="tablist"
           className="tabs tabs-bordered w-full h-fit items-start p-4"
-          data-aos="fade-down" data-aos-duration="2000"
+          data-aos="fade-down"
+          data-aos-duration="2000"
         >
           <input
             type="radio"

@@ -14,7 +14,7 @@ const FormPertanyaan = () => {
   return (
     <div className="md:w-[50%] w-[80%]">
       <h2
-        className="lg:text-2xl text-xl font-bold text-black items-start pb-5"
+        className="text-xl font-bold text-black items-start pb-5"
         data-aos="fade-down"
         data-aos-duration="1500"
       >

@@ -43,9 +43,9 @@ const NavBarAdmin = (props) => {
           />
         </svg>
       </label>
-      <div className="flex flex-row w-full p-2 items-center justify-between">
+      <div className="flex flex-row w-full p-4 items-center justify-between">
         <h1 className="text-4xl font-bold">{children}</h1>
-        <p>{name}</p>
+        <p className="text-xl font-medium">{name}</p>
       </div>
     </div>
   );

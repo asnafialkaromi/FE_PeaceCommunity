@@ -27,31 +27,26 @@ const authSlice = createSlice({
     isLoading: false,
     isError: false,
     isLogin: false,
-    message: "",
     userRole: "",
   },
   reducers: {
     setPending: (state) => {
       state.isLoading = true;
       state.isError = false;
-      state.message = "";
     },
-    setFulfilled: (state, action) => {
+    setFulfilled: (state) => {
       state.isLoading = false;
       state.isError = false;
       state.isLogin = true;
-      state.message = action.payload;
     },
-    setRejected: (state, action) => {
+    setRejected: (state) => {
       state.isLoading = false;
       state.isError = true;
-      state.message = action.payload;
     },
     resetState: (state) => {
       state.isLoading = false;
       state.isError = false;
       state.isLogin = false;
-      state.message = "";
     },
   },
 });

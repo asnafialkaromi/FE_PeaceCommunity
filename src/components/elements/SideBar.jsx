@@ -14,9 +14,9 @@ const SideBar = () => {
   const dispatch = useDispatch();
 
   const logOUt = async () => {
-    const response = await axios.delete("http://localhost:5000/api/v1/logout");
+    const response = await axios.post("http://localhost:5000/api/v1/logout");
 
-    const status = response.data.msg;
+    const status = response.data.message;
 
     Swal.fire({
       icon: "success",
@@ -26,7 +26,6 @@ const SideBar = () => {
     });
 
     navigate("/");
-
     dispatch(resetState());
   };
 

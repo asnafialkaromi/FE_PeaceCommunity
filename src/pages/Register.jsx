@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ImageLogin from "../assets/img/ImageLogin.png";
+import ImgLogin from "../assets/img/ImgLogin.png";
 import InputText from "../components/elements/InputText";
 import Button from "../components/elements/Button";
 import axios from "axios";
@@ -32,14 +32,10 @@ const RegisterPage = () => {
           noTelp,
           password,
           confPassword,
-          role: "user", // Assuming a default role for registration
+          role: "user",
         }
       );
 
-      // Handle registration success
-      console.log(response.data); // You can log the response or handle it as needed
-
-      // Reset form and loading state
       setName("");
       setEmail("");
       setNoTelp("");
@@ -51,15 +47,15 @@ const RegisterPage = () => {
 
       Swal.fire({
         icon: "success",
-        title: "Pendaftaran Berhasil!",
+        title: response.data,
         showConfirmButton: false,
         timer: 2500,
       });
       navigate("/login");
     } catch (error) {
-      // Handle registration error and set error state
       setIsError(true);
-      setMessage("Registration failed. Please check your data.");
+      setMessage(error.response.data);
+      setIsLoading(false);
       setIsLoading(false);
     }
   };
@@ -72,11 +68,11 @@ const RegisterPage = () => {
 
   return (
     <>
-      <div className="flex flex-row ">
+      <div className="flex flex-row bg-gradient-to-b from-[#003F9A] to-[#2871CC] ">
         <div className="h-screen w-1/2 hidden lg:block">
-          <img src={ImageLogin} alt="" className="h-full w-full object-cover" />
+          <img src={ImgLogin} alt="" className="h-full w-full object-cover" />
         </div>
-        <div className="bg-gradient-to-b from-[#003F9A] to-[#2871CC] lg:w-1/2 h-screen w-full flex flex-col items-center justify-center gap-8 py-14">
+        <div className="lg:w-1/2 h-screen w-full flex flex-col items-center justify-center gap-8 py-14">
           <h1
             className="text-4xl font-bold text-white text-center"
             data-aos="fade-down"
@@ -92,6 +88,24 @@ const RegisterPage = () => {
           >
             <div className="lg:w-3/4  h-fit py-6 px-14 bg-white flex flex-col items-center justify-center gap-6 rounded-[20px]">
               <h2 className="text-3xl font-bold pb-3 text-black">Register</h2>
+              {isError ? (
+                <div role="alert" className="alert alert-warning">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="stroke-current shrink-0 h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                    />
+                  </svg>
+                  <span>{message}</span>
+                </div>
+              ) : null}
               <InputText
                 type="text"
                 placeholder="Nama"
@@ -118,7 +132,11 @@ const RegisterPage = () => {
                 onChange={(e) => setConfPassword(e.target.value)}
               />
               <Button type="submit" className="w-full">
-                Register
+                {isLoading ? (
+                  <span className="loading loading-spinner"></span>
+                ) : (
+                  "Register"
+                )}
               </Button>
               <p className="text-sm text-slate-600">
                 Sudah punya akun?{" "}

@@ -1,4 +1,3 @@
-import React from "react";
 import NavBarUser from "../components/elements/NavBarUser";
 import PertanyaanUmum from "../components/section/PertanyaanUmum";
 import FormPertanyaan from "../components/section/FormPertanyaan";

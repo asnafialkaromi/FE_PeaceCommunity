@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { resetState } from "../../features/authSlice";
 import axios from "axios";
 import Swal from "sweetalert2";
+import logo from "../../assets/icons/logo.svg";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -12,9 +13,9 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    const response = await axios.delete("http://localhost:5000/api/v1/logout");
+    const response = await axios.post("http://localhost:5000/api/v1/logout");
 
-    const status = response.data.msg;
+    const status = response.data.message;
 
     Swal.fire({
       icon: "success",
@@ -34,9 +35,13 @@ const Navbar = () => {
     <nav className="bg-white fixed w-full z-20 top-0 start-0 border-b-2">
       <div className="max-w-screen-xl h-[80px] flex flex-wrap items-center justify-between mx-auto p-4 ">
         <Link to="/" className="flex items-center space-x-3 text-black">
-          <span className="self-center text-lg font-bold whitespace-nowrap">
-            Pengaduan <br /> Masyarakat
-          </span>
+          <div className="w-[64px] h-[64px] justify-center items-center">
+            <img
+              src={logo}
+              className="w-[80px] h-[80px] object-fit justify-center items-center pb-4"
+              alt="logo"
+            />
+          </div>
         </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 sm:gap-2 justify-center items-center">
           {isLogin ? (

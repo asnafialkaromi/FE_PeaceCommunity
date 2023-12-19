@@ -8,6 +8,7 @@ import axios from "axios";
 import Footer from "../components/elements/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Swal from "sweetalert2";
 
 const Laporan = () => {
   window.scrollTo(0, 0);
@@ -32,6 +33,14 @@ const Laporan = () => {
       const response = await axios.get("http://localhost:5000/api/v1/reports");
       setReports(response.data);
     } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        showConfirmButton: true,
+        confirmButtonColor: "#1d4ed8",
+        text: "Kamu harus login kembali",
+      });
+      navigate("/login");
       console.log(error);
     }
   };

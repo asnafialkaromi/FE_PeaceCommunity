@@ -1,6 +1,8 @@
 import CardFeature from "../elements/CardFeature";
-import Img1 from "../../assets/img/admin-control.png";
-import Img2 from "../../assets/img/user-control.png";
+import ImgUser from "../../assets/img/user-control.png";
+import ImgStatus from "../../assets/img/status.png";
+import ImgNews from "../../assets/img/News.png";
+import ImgTruted from "../../assets/img/Trusted.png";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -16,7 +18,7 @@ const FeatureDetails = () => {
 
   return (
     <div
-      className="flex w-[100%] min-h-screen bg-white items-center justify-center"
+      className="flex w-[100%] min-h-screen bg-white items-center justify-center pb-10"
       data-aos="fade-up"
       data-aos-duration="3000"
     >
@@ -27,24 +29,24 @@ const FeatureDetails = () => {
         <div className="flex justify-center items-center">
           <div className="grid lg:grid-rows-2 lg:grid-flow-col gap-10 align-items-center w-full">
             <CardFeature
-              Img={Img1}
-              Title="Admin Control"
-              desc="Admin Control, Fitur ini berfungsi untuk mengontrol laporan-laporan yang masuk dari masyarakat, dan memudahkan para petugas untuk menontrol laporan-laporan yang masuk."
+              Img={ImgUser}
+              Title="Kontrol Pengguna"
+              desc="Pengguna dapat membuat laporan sesuai dengan kebutuhan yang ada dan mudah dipahami dalampembuatan laporan."
             />
             <CardFeature
-              Img={Img2}
-              Title="User Control"
-              desc="User Control, Fitur ini di sediakan untuk user agar dapat dengan mudah melaporkan keluhan yang ingin di sampaikan kepada perangkat desa."
+              Img={ImgStatus}
+              Title="Cek Status"
+              desc="Terdapat status dari masing - masing laporan yang dibuat oleh pengguna, sehingga pengguna dapat memantau status laporan mereka sendiri."
             />
             <CardFeature
-              Img={Img2}
-              Title="User Control"
-              desc="User Control, Fitur ini di sediakan untuk user agar dapat dengan mudah melaporkan keluhan yang ingin di sampaikan kepada perangkat desa."
+              Img={ImgNews}
+              Title="Berita"
+              desc="Tersedia berita - berita yang ada untuk memberikan beberapa informasi penting."
             />
             <CardFeature
-              Img={Img1}
-              Title="Admin Control"
-              desc="Admin Control, Fitur ini berfungsi untuk mengontrol laporan-laporan yang masuk dari masyarakat, dan memudahkan para petugas untuk menontrol laporan-laporan yang masuk."
+              Img={ImgTruted}
+              Title="Terpercaya"
+              desc="Laporan akan disampaikan kepada pihak yang berwajib agar segera ditindak lalnjuti terkait aporan yang ada."
             />
           </div>
         </div>

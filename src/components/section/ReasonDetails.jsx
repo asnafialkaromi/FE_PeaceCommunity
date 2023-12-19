@@ -24,18 +24,15 @@ const Reason = () => {
             Kenapa Menggunakan Website ini?
           </h1>
           <p className="py-6 xl:text-xl md:text-lg text-base">
-            Kami berkomitmen untuk menyediakan sarana yang efektif dan efisien
-            bagi Anda untuk menyampaikan keluhan, memberikan saran, dan
-            berinteraksi dengan pemerintah daerah. Dengan mengakses website ini,
-            Anda dapat mengajukan pengaduan secara online, memantau status
-            keluhan, dan berpartisipasi aktif dalam meningkatkan kualitas hidup
-            di komunitas Anda. Keamanan dan kerahasiaan informasi Anda adalah
-            prioritas kami, dan melalui platform ini, kami membuka jembatan
-            komunikasi antara warga dan pemerintah untuk menciptakan lingkungan
-            yang lebih transparan dan responsif. Mari bersama-sama membangun
-            masyarakat yang lebih baik dengan memberikan suara Anda melalui
-            pengaduan yang Anda layangkan di sini. Terima kasih atas partisipasi
-            Anda dalam memajukan kualitas hidup bersama-sama!
+            Kami berkomitmen menyediakan sarana efektif dan efisien bagi Anda
+            berinteraksi dengan pemerintah daerah. Melalui website ini, Anda
+            bisa menyampaikan keluhan dan memantau status keluhan secara online.
+            Keamanan dan kerahasiaan informasi anda adalah prioritas kami.
+            Platform ini membuka jembatan komunikasi antara warga dan
+            pemerintah, menciptakan lingkungan yang lebih transparan dan
+            responsif. Bersama, mari membangun masyarakat yang lebih baik dengan
+            memberikan suara melalui pengaduan Anda di sini. Terima kasih atas
+            partisipasi Anda dalam memajukan kualitas hidup bersama-sama!
           </p>
         </div>
         <img
